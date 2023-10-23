@@ -8,67 +8,74 @@
 
     <ImageView
         android:id="@+id/image_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
+
+    <ImageView
+        android:id="@+id/image_prev"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        />
+
+    <ImageView
+        android:id="@+id/image_next"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
 
     <EditText
         android:id="@+id/edit_page"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/image_main"
+        android:inputType="numberDecimal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/edit_page"
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="horizontal">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <Button
+            android:id="@+id/btn_prev"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/image_prev"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-            <Button
-                android:id="@+id/"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_prev"
+            android:text="&lt;"/>
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <Button
+            android:id="@+id/btn_next"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/image_next"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_next"
+            android:text="&gt;"/>
 
 
     </LinearLayout>
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
